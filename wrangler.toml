@@ -9,9 +9,6 @@ id = "proxy-db"
 binding = "PROXY_LOGS_ANALYTICS"
 dataset = "proxy_events"
 
-[[routes]]
-pattern = "*/*"
-zone_name = "*"
-
 [ai]
 binding = "proxy-ai" # available in your Worker code on `env.AI`
+
