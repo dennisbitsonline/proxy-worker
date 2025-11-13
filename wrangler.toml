@@ -1,5 +1,6 @@
 name = "proxy-worker"
 main = "functions/proxy-worker.js"
+pages_build_output_dir = "./dist"
 compatibility_date = "2025-11-13"
 workers_dev = true
 
@@ -11,5 +12,6 @@ id = "proxy-db"
 binding = "PROXY_LOGS"
 dataset = "proxy_events"
 
-
-
+[[routes]]
+pattern = "proxy-worker.bitsonline.nl/*"
+zone_name = "bitsonline.nl"
