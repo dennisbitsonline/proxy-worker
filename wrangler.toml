@@ -1,5 +1,5 @@
 name = "proxy-worker"
-main = "functions/proxy-worker.js"
+main = "./proxy-worker/index.js"
 compatibility_date = "2025-11-13"
 
 [[kv_namespaces]]
@@ -11,13 +11,14 @@ binding = "PROXY_LOGS_ANALYTICS"
 dataset = "proxy_events"
 
 [assets]
-directory = "./dist/"
+directory = "./worker/"
 binding = "ASSETS"
 run_worker_first = true
 
 [[routes]]
 pattern = "proxy-worker.bitsonline.nl/*"
 zone_name = "bitsonline.nl"
+
 
 
 
