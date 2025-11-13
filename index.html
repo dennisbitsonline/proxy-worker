@@ -1,50 +1,24 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Direct Upload Demo | Cloudflare Pages</title>
-    <link href="web/style.css" rel="stylesheet" />
-  </head>
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event));
+});
 
-  <body>
-    <div class="container">
-      <div class="header">
-        <h3>Example project</h3>
-        <h1>Welcome to Cloudflare Pages</h1>
-        <p>
-          Upload your prebuilt web directly to Pages and deploy <br />
-          your project to the Cloudflare edge within seconds.
-        </p>
-        <p>Create new deployments using:</p>
-        <section class="options">
-          <img src="web/terminal.svg" />
-          <a
-            href="https://dash.cloudflare.com/?to=/:account/pages/new/wrangler-guide"
-            target="_blank"
-            > Wrangler CLI</a
-          >
-          <img src="web/cloud-upload.svg" />
-          <a
-            href="https://dash.cloudflare.com/?to=/:account/pages/new/upload"
-            target="_blank"
-            > Dashboard</a
-          >
-        </section>
-      </div>
+async function handleRequest(event) {
+  const logs = [];
+  console.log = (msg) => logs.push(msg); // Log naar array
 
-      <section class="learn-more">
-        <a
-          href="https://developers.cloudflare.com/pages/platform/direct-uploads"
-        >
-          <button>Learn more</button>
-        </a>
-      </section>
-      <div class="logo">
-        <a href="https://pages.cloudflare.com/" target="_blank">
-          <img src="web/cloudflare-pages.svg"
-        /></a>
-      </div>
-    </div>
-  </body>
-</html>
+  // Voeg hier je logica toe
+  console.log('Request received');
+  console.log('Processing...');
+
+  // HTML response met logs
+  return new Response(`
+    <html>
+      <body>
+        <h1>Logs</h1>
+        <pre>${logs.join('\n')}</pre>
+      </body>
+    </html>
+  `, {
+    headers: { 'Content-Type': 'text/html' }
+  });
+}
