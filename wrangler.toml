@@ -11,13 +11,14 @@ binding = "PROXY_LOGS_ANALYTICS"
 dataset = "proxy_events"
 
 [assets]
-directory = "./worker/"
+directory = "/worker/"
 binding = "ASSETS"
 run_worker_first = true
 
 [[routes]]
-pattern = "proxy-worker.bitsonline.nl/*"
-zone_name = "bitsonline.nl"
+pattern = "*/*"
+zone_name = "*"
+
 
 
 
