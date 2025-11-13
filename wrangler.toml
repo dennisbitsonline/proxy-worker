@@ -1,11 +1,15 @@
 name = "proxy-worker"
 main = "functions/proxy-worker.js"
-compatibility_date = "2025-11-12"
+compatibility_date = "2025-11-13"
 workers_dev = true
 
-analytics_engine_datasets = [
-  { binding = "PROXY_LOGS", dataset = "proxy_events" }
-]
+[[kv_namespaces]]
+binding = "PROXY_LOGS"
+id = "proxy-db"
+
+[[analytics_engine_datasets]]
+binding = "PROXY_LOGS"
+dataset = "proxy_events"
 
 
 
