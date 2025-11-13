@@ -10,8 +10,14 @@ id = "proxy-db"
 binding = "PROXY_LOGS_ANALYTICS"
 dataset = "proxy_events"
 
+[assets]
+directory = "./dist/"
+binding = "ASSETS"
+run_worker_first = true
+
 [[routes]]
 pattern = "proxy-worker.bitsonline.nl/*"
 zone_name = "bitsonline.nl"
+
 
 
