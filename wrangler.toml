@@ -12,3 +12,4 @@ dataset = "proxy_events"
 [ai]
 binding = "proxy-ai" # available in your Worker code on `env.AI`
 
+
