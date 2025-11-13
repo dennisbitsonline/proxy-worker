@@ -1,0 +1,9 @@
+name = "proxy-worker"
+main = "proxy-worker.js"
+compatibility_date = "2025-11-12"
+workers_dev = true
+
+analytics_engine_datasets = [
+  { binding = "PROXY_LOGS", dataset = "proxy_events" }
+]
+
