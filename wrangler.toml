@@ -5,13 +5,14 @@ compatibility_date = "2025-11-13"
 workers_dev = true
 
 [[kv_namespaces]]
-binding = "PROXY_LOGS"
+binding = "PROXY_LOGS_KV"
 id = "proxy-db"
 
 [[analytics_engine_datasets]]
-binding = "PROXY_LOGS"
+binding = "PROXY_LOGS_ANALYTICS"
 dataset = "proxy_events"
 
 [[routes]]
 pattern = "proxy-worker.bitsonline.nl/*"
 zone_name = "bitsonline.nl"
+
